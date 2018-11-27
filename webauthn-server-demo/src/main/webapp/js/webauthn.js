@@ -150,7 +150,12 @@
           authenticatorData: base64url.fromByteArray(response.response.authenticatorData),
           clientDataJSON: base64url.fromByteArray(response.response.clientDataJSON),
           signature: base64url.fromByteArray(response.response.signature),
-          userHandle: response.response.userHandle && base64url.fromByteArray(response.response.userHandle),
+
+          // eslint-disable-line no-warning-comments // TODO remove this bug workaround when fixed in Chrome https://bugs.chromium.org/p/chromium/issues/detail?id=847878#c6
+          ...(response.response.userHandle && response.response.userHandle.byteLength > 0 // eslint-disable-line no-extra-parens
+            ? { userHandle: base64url.fromByteArray(response.response.userHandle) }
+            : {}
+          ),
         },
         clientExtensionResults,
       };
