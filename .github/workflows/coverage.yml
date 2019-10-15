@@ -1,5 +1,6 @@
-# This name is shown in the status badge in the README
-name: build
+# Having this as a separate workflow keeps the build.yml workflow fast, for a
+# shorter iteration cycle.
+name: coverage
 
 on: [push, pull_request]
 
@@ -21,8 +22,8 @@ jobs:
       with:
         java-version: ${{ matrix.java }}
 
-    - name: Run tests
-      run: ./gradlew check
+    - name: Run mutation test
+      run: ./gradlew pitest
 
-    - name: Build JavaDoc
-      run: ./gradlew assembleJavadoc
+    - name: Upload coverage report to Coveralls
+      run: ./gradlew coveralls
