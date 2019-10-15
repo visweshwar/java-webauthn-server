@@ -26,3 +26,9 @@ jobs:
 
     - name: Build JavaDoc
       run: ./gradlew assembleJavadoc
+
+    - name: Run mutation test
+      run: ./gradlew pitest
+
+    - name: Upload coverage report to Coveralls
+      run: ./gradlew coveralls
