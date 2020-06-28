@@ -101,17 +101,17 @@ public class WebAuthnRestResource {
 
 
         public Index() throws MalformedURLException {
-            authenticate = uriInfo.getAbsolutePathBuilder().path("authenticate").build().toURL();
-            deleteAccount = uriInfo.getAbsolutePathBuilder().path("delete-account").build().toURL();
-            deregister = uriInfo.getAbsolutePathBuilder().path("action").path("deregister").build().toURL();
-            register = uriInfo.getAbsolutePathBuilder().path("register").build().toURL();
+            authenticate = uriInfo.getAbsolutePathBuilder().path("authenticate").scheme("https").build().toURL();
+            deleteAccount = uriInfo.getAbsolutePathBuilder().path("delete-account").scheme("https").build().toURL();
+            deregister = uriInfo.getAbsolutePathBuilder().path("action").path("deregister").scheme("https").build().toURL();
+            register = uriInfo.getAbsolutePathBuilder().path("register").scheme("https").build().toURL();
         }
     }
     private final class Info {
         public final URL version;
 
         public Info() throws MalformedURLException {
-            version = uriInfo.getAbsolutePathBuilder().path("version").build().toURL();
+            version = uriInfo.getAbsolutePathBuilder().path("version").scheme("https").build().toURL();
         }
 
     }
@@ -140,8 +140,8 @@ public class WebAuthnRestResource {
         }
     }
     private final class StartRegistrationActions {
-        public final URL finish = uriInfo.getAbsolutePathBuilder().path("finish").build().toURL();
-        public final URL finishU2f = uriInfo.getAbsolutePathBuilder().path("finish-u2f").build().toURL();
+        public final URL finish = uriInfo.getAbsolutePathBuilder().path("finish").scheme("https").build().toURL();
+        public final URL finishU2f = uriInfo.getAbsolutePathBuilder().path("finish-u2f").scheme("https").build().toURL();
         private StartRegistrationActions() throws MalformedURLException {
         }
     }
