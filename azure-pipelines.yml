@@ -35,9 +35,8 @@ stages:
       inputs:
         gradleWrapperFile: 'gradlew'
         workingDirectory: '/'
-        tasks: 'war'
+        tasks: 'build war'
         publishJUnitResults: true
-        testResultsFiles: '**/TEST-*.xml'
         javaHomeOption: 'JDKVersion'
         sonarQubeRunAnalysis: false
     - task: Docker@2
