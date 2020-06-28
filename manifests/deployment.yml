@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: payxdemoazureacriowebauthnspringv1 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: payxdemoazureacriowebauthnspringv1 
+    spec:
+      containers:
+        - name: payxdemoazureacriowebauthnspringv1 
+          image: payxdemo.azurecr.io/payxdemoazureacriowebauthnspringv1
+          ports:
+          - containerPort: 8080
