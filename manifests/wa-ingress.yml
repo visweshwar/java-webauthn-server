@@ -1,0 +1,18 @@
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+ name: ingress-webauthn
+spec:
+ tls:
+ - hosts:
+   - yubico.us-east.payx-demo.com
+   #secretName: "webauthn-tls-secret"
+ rules:
+ - host: yubico.us-east.payx-demo.com
+   http:
+    paths: 
+     - path: /app
+       backend:
+        serviceName: webauthn-spring-service
+        servicePort: 8080

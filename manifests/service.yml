@@ -5,6 +5,6 @@ metadata:
 spec:
     type: ClusterIP
     ports:
-        - port: 8443
+        - port: 8080
     selector:
-        app: webauthnspring
+        app: yubico-webauthn-app

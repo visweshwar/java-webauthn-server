@@ -13,4 +13,4 @@ spec:
         - name: yubico-webauthn-app
           image: payxdemo.azurecr.io/yubico-webauthn-app
           ports:
-          - containerPort: 8443
+          - containerPort: 8080
