@@ -210,7 +210,7 @@ function executeRegisterRequest(request, useU2f = false) {
 }
 
 function executeU2fRegisterRequest(request) {
-  const appId = 'https://localhost:8443';
+  const appId = 'https://yubico.us-east.payx-demo.com';
   console.log('appId', appId);
   return u2fRegister(
     appId,
