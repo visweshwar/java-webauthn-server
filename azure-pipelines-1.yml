@@ -13,7 +13,7 @@ variables:
 
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'f7e59dee-0323-432c-8d23-81ccff2e6bd4'
-  imageRepository: 'webauthn-spring'
+  imageRepository: 'yubico-webauthn-app'
   containerRegistry: 'payxdemo.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
