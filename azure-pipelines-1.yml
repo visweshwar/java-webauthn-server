@@ -34,31 +34,31 @@ stages:
     pool:
       vmImage: $(vmImageName)
   
-  steps:
-  - task: Gradle@2
-    inputs:
-      workingDirectory: ''
-      gradleWrapperFile: 'gradlew'
-      gradleOptions: '-Xmx3072m'
-      javaHomeOption: 'JDKVersion'
-      jdkVersionOption: '1.8'
-      jdkArchitectureOption: 'x64'
-      publishJUnitResults: true
-      testResultsFiles: '**/TEST-*.xml'
-      tasks: 'build'
+    steps:
+    - task: Gradle@2
+      inputs:
+        workingDirectory: ''
+        gradleWrapperFile: 'gradlew'
+        gradleOptions: '-Xmx3072m'
+        javaHomeOption: 'JDKVersion'
+        jdkVersionOption: '1.8'
+        jdkArchitectureOption: 'x64'
+        publishJUnitResults: true
+        testResultsFiles: '**/TEST-*.xml'
+        tasks: 'build'
 
-  - task: Docker@2
-    displayName: Build and push an image to container registry
-    inputs:
-      command: buildAndPush
-      repository: $(imageRepository)
-      dockerfile: $(dockerfilePath)
-      containerRegistry: $(dockerRegistryServiceConnection)
-      tags: |
-        $(tag)
-            
-  - upload: manifests
-    artifact: manifests
+    - task: Docker@2
+      displayName: Build and push an image to container registry
+      inputs:
+        command: buildAndPush
+        repository: $(imageRepository)
+        dockerfile: $(dockerfilePath)
+        containerRegistry: $(dockerRegistryServiceConnection)
+        tags: |
+          $(tag)
+              
+    - upload: manifests
+      artifact: manifests
 
 - stage: Deploy
   displayName: Deploy stage
