@@ -35,7 +35,7 @@ stages:
       inputs:
         gradleWrapperFile: 'gradlew'
         workingDirectory: '/'
-        tasks: 'build war'
+        tasks: 'build'
         javaHomeOption: 'JDKVersion'
         sonarQubeRunAnalysis: false
     - task: Docker@2
