@@ -1,16 +1,16 @@
 apiVersion : apps/v1beta1
 kind: Deployment
 metadata:
-  name: payxdemoazureacriowebauthnspringv1 
+  name: yubico-webauthn-app
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: payxdemoazureacriowebauthnspringv1 
+        app: yubico-webauthn-app
     spec:
       containers:
-        - name: payxdemoazureacriowebauthnspringv1 
-          image: payxdemo.azurecr.io/payxdemoazureacriowebauthnspringv1
+        - name: yubico-webauthn-app
+          image: payxdemo.azurecr.io/yubico-webauthn-app
           ports:
-          - containerPort: 8080
+          - containerPort: 8443
