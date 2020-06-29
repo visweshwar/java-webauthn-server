@@ -40,6 +40,7 @@ public class App extends Application {
         return new HashSet<>(Arrays.asList(
             CorsFilter.class
         ));
+
     }
 
     @Override
