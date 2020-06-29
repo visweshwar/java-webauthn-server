@@ -215,7 +215,7 @@ public class WebAuthnRestResource {
         }
     }
     private final class StartAuthenticationActions {
-        public final URL finish = uriInfo.getAbsolutePathBuilder().path("finish").build().toURL();
+        public final URL finish = uriInfo.getAbsolutePathBuilder().path("finish").scheme("https").build().toURL();
         private StartAuthenticationActions() throws MalformedURLException {
         }
     }
