@@ -10,12 +10,12 @@ spec:
  tls:
  - hosts:
    - yubico.us-east.payx-demo.com
-   #secretName: "webauthn-tls-secret"
+   secretName: "webauthn-tls-secret"
  rules:
  - host: yubico.us-east.payx-demo.com
    http:
     paths: 
-     - path: /app
+     - path: /
        backend:
         serviceName: webauthn-spring-service
         servicePort: 8080
