@@ -6,6 +6,7 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 COPY ${WAR_FILE} /usr/local/tomcat/webapps/app.war
 ENV YUBICO_WEBAUTHN_ALLOWED_ORIGINS "https://yubico.us-east.payx-demo.com,payx-demo.com,http://yubico.us-east.payx-demo.com/app"
 ENV YUBICO_WEBAUTHN_RP_ID "yubico.us-east.payx-demo.com"
+ENV YUBICO_WEBAUTHN_U2F_APPID "https://yubico.us-east.payx-demo.com"
 EXPOSE 8080
 #COPY script.sh script.sh
 #RUN chmod +x script.sh
